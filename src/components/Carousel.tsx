@@ -4,10 +4,8 @@ import Avatar from './Avatar';
 
 export default function Carousel({
   carouseImages,
-  children,
 }: {
   carouseImages: string[];
-  children: React.ReactNode;
 }) {
   let count = 0;
   let slideInterval: number;
@@ -54,32 +52,29 @@ export default function Carousel({
   };
 
   return (
-    <div className="flex">
-      <div ref={slideRef} className="w-full select-none relative">
-        {/* <div className="aspect-w-16 aspect-h-9"> */}
-        <img
-          src={carouseImages[currentIndex]}
-          alt=""
-          className="object-cover w-full max-h-[38vw]"
-        />
-        {/* </div> */}
+    <div ref={slideRef} className="w-full select-none relative">
+      {/* <div className="aspect-w-16 aspect-h-9"> */}
+      <img
+        src={carouseImages[currentIndex]}
+        alt=""
+        className="object-cover w-full max-h-[38vw]"
+      />
+      {/* </div> */}
 
-        <div className="absolute w-full top-1/2 transform -translate-y-1/2 px-3 flex justify-between items-center">
-          <button
-            className="rounded-full bg-opacity-50 cursor-pointer hover:bg-opacity-100 transition"
-            onClick={handleOnPrevClick}
-          >
-            {/* <AiOutlineVerticalRight size={30} /> */}
-          </button>
-          <button
-            className="rounded-full bg-opacity-50 cursor-pointer hover:bg-opacity-100 transition"
-            onClick={handleOnNextClick}
-          >
-            {/* <AiOutlineVerticalLeft size={30} /> */}
-          </button>
-        </div>
+      <div className="absolute w-full top-1/2 transform -translate-y-1/2 px-3 flex justify-between items-center">
+        <button
+          className="rounded-full bg-opacity-50 cursor-pointer hover:bg-opacity-100 transition"
+          onClick={handleOnPrevClick}
+        >
+          {/* <AiOutlineVerticalRight size={30} /> */}
+        </button>
+        <button
+          className="rounded-full bg-opacity-50 cursor-pointer hover:bg-opacity-100 transition"
+          onClick={handleOnNextClick}
+        >
+          {/* <AiOutlineVerticalLeft size={30} /> */}
+        </button>
       </div>
-      <div>{children}</div>
     </div>
   );
 }

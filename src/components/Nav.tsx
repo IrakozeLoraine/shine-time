@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ROUTES from '../routes';
 import Avatar from './Avatar';
@@ -18,15 +18,15 @@ export default function Nav() {
   const inactiveClass = '';
 
   return (
-    <nav className="bg-white py-6">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-white shadow py-6">
+      <div className="max-w-full px-4 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-center justify-between h-16">
-          <div className="md:hidden">
+          <div className="md:hidden md:mt-0 -mt-8">
             <Avatar src={'/img/fb-btn.svg'} alt="" size={'24'} />
           </div>
-          <div>
+          <div className="pr-12 md:pr-0">
             <Link to={ROUTES.HOME}>
-              <Avatar src={'/img/main-logo.svg'} alt="" size={'72'} />
+              <Avatar src={'/img/main-logo.svg'} alt="" size={'96'} />
             </Link>
           </div>
           <div className="hidden md:block">
@@ -57,7 +57,7 @@ export default function Nav() {
             ) : (
               <button
                 onClick={() => setShowMenu(!showMenu)}
-                className="inline-flex items-center justify-center fixed p-2 z-30 right-10 top-6"
+                className="inline-flex items-center justify-center fixed p-2 z-30 right-10 top-10"
               >
                 <Avatar src={'/img/menu-btn.svg'} alt="" size={'18'} />
               </button>
