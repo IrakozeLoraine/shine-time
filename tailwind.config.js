@@ -16,6 +16,8 @@ module.exports = {
         primary: '#00A58C',
         main: '#006253',
         secondary: '#4A4A4A',
+        footer: '#F79F2C',
+        bgfooter: '#004137',
         drk: '#242424',
         'red-title': '#EF5C6A',
         red: '#E14958',
