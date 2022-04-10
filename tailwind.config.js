@@ -6,7 +6,7 @@ module.exports = {
         'iron-image': "url('/img/carousel/iron-image.svg')",
         'sudsy-image': "url('/img/carousel/sudsy-image.svg')",
         'spray-image': "url('/img/carousel/spray-image.svg')",
-        'join-us-image': "url('/img/join-us-bg.svg')",
+        'join-us-image': "url('/img/join-us-bg.png')",
       },
       fontFamily: {
         body: ['Lato', 'sans-serif'],

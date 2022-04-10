@@ -6,7 +6,7 @@ export default function JoinUs({ section }: ISection) {
   return (
     <>
       <div
-        className="py-24 bg-join-us-image bg-cover bg-no-repeat md:h-[40vw] md:max-h-[40vw]"
+        className="py-24 bg-join-us-image md:h-[40vw] md:max-h-[40vw]"
         ref={section}
       >
         <div className="container mx-auto px-2 md:px-96">
