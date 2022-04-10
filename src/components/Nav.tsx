@@ -1,19 +1,12 @@
-import React, { RefObject, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ROUTES from '../routes';
 import { ILink } from '../types';
+import { scrollDown } from '../utils';
 import Avatar from './Avatar';
 
 export default function Nav({ links }: { links: ILink[] }) {
   const [showMenu, setShowMenu] = useState(false);
-
-  const scrollDown = (ref: RefObject<HTMLDivElement>) => {
-    window.scrollTo({
-      top: ref.current?.offsetTop,
-      behavior: 'smooth',
-    });
-  };
-
   const activeClass = 'border-b-2 border-b-primary';
   const inactiveClass = '';
 

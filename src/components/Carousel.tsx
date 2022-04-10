@@ -57,7 +57,7 @@ export default function Carousel({
       <img
         src={carouseImages[currentIndex]}
         alt=""
-        className="object-cover w-full max-h-[38vw]"
+        className="object-cover w-full md:max-h-[38vw]"
       />
       {/* </div> */}
 

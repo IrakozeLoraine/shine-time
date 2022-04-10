@@ -20,7 +20,7 @@ export default function JoinUs({ section }: ISection) {
             </h2>
             <div className="pt-6 md:pt-16 flex justify-center items-center">
               <button className="bg-main text-xs md:text-xl text-white font-bold rounded-md py-2 px-3">
-                <Link to={ROUTES.CONTACT}>contact us</Link>
+                contact us
               </button>
             </div>
           </div>

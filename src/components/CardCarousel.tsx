@@ -52,7 +52,7 @@ export default function CardCarousel({ cards }: ICardCarousel) {
   };
 
   return (
-    <div ref={slideRef} className="w-full select-none relative">
+    <div ref={slideRef} className="px-12 md:px-0 w-full select-none relative">
       <Card
         name={cards[currentIndex].name}
         location={cards[currentIndex].location}
