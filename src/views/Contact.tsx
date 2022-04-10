@@ -1,9 +1,12 @@
-import React from 'react';
 import ContactForm from '../components/ContactForm';
+import { ISection } from '../types';
 
-export default function Contact() {
+export default function Contact({ section }: ISection) {
   return (
-    <div className="py-24 bg-primary h-full md:h-[40vw] md:max-h-[40vw]">
+    <div
+      className="py-24 bg-primary h-full md:h-[40vw] md:max-h-[40vw]"
+      ref={section}
+    >
       <div className="container mx-auto px-9 md:px-96">
         <div className="flex flex-col items-center justify-center">
           <h2 className="font-cursive underline text-white text-2xl md:text-5xl">

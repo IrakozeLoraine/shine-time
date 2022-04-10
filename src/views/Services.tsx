@@ -1,12 +1,12 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import Avatar from '../components/Avatar';
 import Card from '../components/Card';
 import CardCarousel from '../components/CardCarousel';
 import Carousel from '../components/Carousel';
 import ROUTES from '../routes';
+import { ISection } from '../types';
 
-export default function Services() {
+export default function Services({ section }: ISection) {
   const services = [
     {
       img: '/img/services/weekly-img.svg',
@@ -62,7 +62,7 @@ export default function Services() {
 
   return (
     <>
-      <div>
+      <div ref={section}>
         <div className="flex flex-col px-5 py-6 md:px-44 md:py-16 bg-primary">
           <h2
             className={`text-5xl font-normal underline capitalize font-cursive text-white text-center pt-2 pb-12`}

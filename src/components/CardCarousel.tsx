@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ICard } from '../types';
 import Card from './Card';
 
@@ -32,7 +32,7 @@ export default function CardCarousel({ cards }: ICardCarousel) {
   const startSlider = () => {
     slideInterval = setInterval(() => {
       handleOnNextClick();
-    }, 3000);
+    }, 2000);
   };
 
   const pauseSlider = () => {

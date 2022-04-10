@@ -1,12 +1,14 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import ROUTES from '../routes';
-import Footer from './Footer';
+import { ISection } from '../types';
 
-export default function JoinUs() {
+export default function JoinUs({ section }: ISection) {
   return (
     <>
-      <div className="py-24 bg-join-us-image bg-cover bg-no-repeat h-[40vw] max-h-[40vw]">
+      <div
+        className="py-24 bg-join-us-image bg-cover bg-no-repeat h-[40vw] max-h-[40vw]"
+        ref={section}
+      >
         <div className="container mx-auto px-2 md:px-96">
           <div className="flex flex-col items-center justify-center">
             <h2 className="font-cursive underline text-red text-2xl md:text-5xl">
@@ -24,7 +26,6 @@ export default function JoinUs() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

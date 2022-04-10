@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { RefObject, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ROUTES from '../routes';
+import { ILink } from '../types';
 import Avatar from './Avatar';
 
-export default function Nav() {
+export default function Nav({ links }: { links: ILink[] }) {
   const [showMenu, setShowMenu] = useState(false);
 
-  const links = [
-    { text: 'About us', to: `${ROUTES.ABOUT}` },
-    { text: 'Services', to: `${ROUTES.SERVICES}` },
-    { text: 'Contact', to: `${ROUTES.CONTACT}` },
-    { text: 'Join us', to: `${ROUTES.JOINUS}` },
-    { text: 'Faqs', to: `${ROUTES.FAQS}` },
-  ];
+  const scrollDown = (ref: RefObject<HTMLDivElement>) => {
+    window.scrollTo({
+      top: ref.current?.offsetTop,
+      behavior: 'smooth',
+    });
+  };
 
   const activeClass = 'border-b-2 border-b-primary';
   const inactiveClass = '';
@@ -29,18 +29,27 @@ export default function Nav() {
               <Avatar src={'/img/main-logo.svg'} alt="" size={'96'} />
             </Link>
           </div>
-          <div className="hidden md:block">
+          <div className="hidden md:fixed">
             <div className="ml-10 flex items-baseline space-x-4">
               {links.map((link, i) => (
-                <Link
+                <div
                   key={link.text}
-                  to={link.to}
-                  className={`text-primary px-3 py-2 text-sm font-bold lowercase ${
+                  onClick={() => scrollDown(link.section)}
+                  className={`cursor-pointer text-primary px-3 py-2 text-lg font-bold lowercase ${
                     location.pathname === link.to ? activeClass : inactiveClass
                   } ${i > 0 && 'ml-4'}`}
                 >
                   {link.text}
-                </Link>
+                </div>
+                // <Link
+                //   key={link.text}
+                //   to={link.to}
+                //   className={`text-primary px-3 py-2 text-sm font-bold lowercase ${
+                //     location.pathname === link.to ? activeClass : inactiveClass
+                //   } ${i > 0 && 'ml-4'}`}
+                // >
+                //   {link.text}
+                // </Link>
               ))}
             </div>
           </div>
@@ -74,15 +83,24 @@ export default function Nav() {
           }`}
         >
           {links.map((link, i) => (
-            <Link
+            <div
               key={link.text}
-              to={link.to}
+              onClick={() => scrollDown(link.section)}
               className={`block px-3 py-2 text-xs font-bold lowercase ${
                 location.pathname === link.to ? activeClass : inactiveClass
               } ${i > 0 && 'mt-1'}`}
             >
               {link.text}
-            </Link>
+            </div>
+            // <Link
+            //   key={link.text}
+            //   to={link.to}
+            //   className={`block px-3 py-2 text-xs font-bold lowercase ${
+            //     location.pathname === link.to ? activeClass : inactiveClass
+            //   } ${i > 0 && 'mt-1'}`}
+            // >
+            //   {link.text}
+            // </Link>
           ))}
         </div>
       </div>

@@ -1,6 +1,6 @@
-import React from 'react';
+import { ISection } from '../types';
 
-export default function FAQ() {
+export default function FAQ({ section }: ISection) {
   const faqs = [
     {
       question: 'Lorem ipsum dolor sit amet?',
@@ -19,7 +19,7 @@ export default function FAQ() {
     },
   ];
   return (
-    <div className="flex flex-col px-5 py-6 md:px-56 md:py-16">
+    <div className="flex flex-col px-5 py-6 md:px-56 md:py-16" ref={section}>
       <h2
         className={`text-2xl md:text-5xl font-normal underline font-cursive text-red-title text-center py-5`}
       >
